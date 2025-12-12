@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Ali | Full Stack Software Engineer</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* الألوان والتصميم الأساسي (محاكاة لنمط Picto الداكن للمبرمج) */
+        :root {
+            --primary-color: #1A237E; /* أزرق نيلي داكن */
+            --accent-color: #00BCD4; /* أزرق سماوي/Teal للتمييز */
+            --bg-dark: #1E1E1E; /* خلفية داكنة احترافية */
+            --text-light: #F5F5F5;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Arial', sans-serif; /* يمكن استبدالها بخط احترافي */
+        }
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--bg-dark);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0097A7;
+            transform: scale(1.05);
+        }
+        .section-card {
+            background-color: #2D2D2D; /* بطاقات رمادية داكنة */
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* ظلال عميقة */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar p-4 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold text-white">[Mohamed Ali] | Code Architect</h1>
+            <nav>
+                <a href="#projects" class="text-gray-300 hover:text-white mx-3">المشاريع</a>
+                <a href="#tech-stack" class="text-gray-300 hover:text-white mx-3">المكدس التقني</a>
+                <a href="#contact" class="text-gray-300 hover:text-white mx-3">تواصل</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="pt-32 pb-20 text-center container mx-auto">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-5xl font-extrabold mb-4 text-white">
+                أنا <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(to right, var(--accent-color), #FFC107);">محمد علي سميح</span>
+            </h2>
+            <h3 class="text-3xl font-light mb-6 text-gray-400">
+                Full Stack Software Engineer | PHP/Laravel Expert
+            </h3>
+            <p class="text-xl mb-10 max-w-2xl mx-auto text-gray-300">
+                أقوم بتحويل المتطلبات المعقدة إلى حلول برمجية مستقرة وقابلة للتوسع (Scalable) ومُحسَّنة الأداء.
+            </p>
+
+            <a href="[رابط ملف CV الخاص بك]" class="btn-primary inline-flex items-center text-lg shadow-lg">
+                <i class="fas fa-download me-2"></i> تحميل السيرة الذاتية (CV)
+            </a>
+            
+            <div class="mt-8 space-x-6">
+                <a href="[رابط LinkedIn]" target="_blank" class="text-gray-400 hover:text-white text-3xl transition-colors">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="[رابط GitHub]" target="_blank" class="text-gray-400 hover:text-white text-3xl transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-stack" class="py-20 container mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12 text-white">
+            المكدس التقني (My Technology Arsenal)
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="section-card text-center">Backend: Laravel/PHP</div>
+            <div class="section-card text-center">Frontend: React.js</div>
+            <div class="section-card text-center">Database: MySQL</div>
+            <div class="section-card text-center">DevOps: Git/Docker</div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 container mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12 text-white">
+            7 مشاريع تحدد خبرتي (Deployed Projects)
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="section-card overflow-hidden">
+                <h3 class="text-2xl font-semibold mb-3 text-white">المشروع #1</h3>
+                <p class="text-gray-400 mb-4">وصف موجز: (مثلاً) نظام إدارة مخزون شامل ومُحسن.</p>
+                <div class="flex space-x-4">
+                    <a href="[رابط الموقع الحي]" target="_blank" class="text-sm text-white hover:text-yellow-400 font-medium">
+                        <i class="fas fa-external-link-alt me-1"></i> Demo
+                    </a>
+                    <a href="[رابط GitHub]" target="_blank" class="text-sm text-white hover:text-yellow-400 font-medium">
+                        <i class="fab fa-github me-1"></i> Source Code
+                    </a>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <footer id="contact" class="py-10 text-center border-t border-gray-700 mt-10">
+        <p class="text-gray-400">تواصل معي لبناء حلول برمجية قوية.</p>
+        </footer>
+
+</body>
+</html>
