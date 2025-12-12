@@ -1,28 +1,48 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Ali | Full Stack Software Engineer</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>Mohamed Ali Samih | Full Stack Software Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* الألوان والتصميم الأساسي (محاكاة لنمط Picto الداكن للمبرمج) */
+        /* Global Styles and Picto Emulation */
         :root {
-            --primary-color: #1A237E; /* أزرق نيلي داكن */
-            --accent-color: #00BCD4; /* أزرق سماوي/Teal للتمييز */
-            --bg-dark: #1E1E1E; /* خلفية داكنة احترافية */
+            --primary-color: #1A237E; /* Deep Navy Blue for Navbar & Accent */
+            --accent-color: #00BCD4; /* Cyan/Teal for CTA and Highlights */
+            --bg-dark: #1E1E1E; /* Primary Dark Background */
+            --card-dark: #2A2A2A; /* Card Background */
             --text-light: #F5F5F5;
+            --text-secondary: #B0BEC5;
+            --shadow-color: rgba(0, 0, 0, 0.7);
         }
         body {
             background-color: var(--bg-dark);
             color: var(--text-light);
-            font-family: 'Arial', sans-serif; /* يمكن استبدالها بخط احترافي */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
         .navbar {
             background-color: var(--primary-color);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+        .section-card {
+            background-color: var(--card-dark);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px var(--shadow-color); /* Picto Style Shadow */
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px var(--shadow-color);
         }
         .btn-primary {
             background-color: var(--accent-color);
@@ -31,17 +51,37 @@
             padding: 12px 30px;
             border-radius: 8px;
             font-weight: bold;
+            text-decoration: none;
             transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 188, 212, 0.4);
         }
         .btn-primary:hover {
             background-color: #0097A7;
-            transform: scale(1.05);
         }
-        .section-card {
-            background-color: #2D2D2D; /* بطاقات رمادية داكنة */
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* ظلال عميقة */
+        .btn-secondary {
+            background: none;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-dark);
+        }
+        .tag {
+            display: inline-block;
+            background-color: #4A4A4A;
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
         }
     </style>
 </head>
@@ -49,78 +89,220 @@
 <body>
 
     <header class="navbar p-4 fixed w-full z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold text-white">[Mohamed Ali] | Code Architect</h1>
-            <nav>
-                <a href="#projects" class="text-gray-300 hover:text-white mx-3">المشاريع</a>
-                <a href="#tech-stack" class="text-gray-300 hover:text-white mx-3">المكدس التقني</a>
-                <a href="#contact" class="text-gray-300 hover:text-white mx-3">تواصل</a>
+        <div class="container flex justify-between items-center">
+            <h1 style="font-size: 1.5em; font-weight: 700; color: white;">[Mohamed Ali] | Code Architect</h1>
+            <nav style="display: flex;">
+                <a href="#tech-stack" style="color: #B0BEC5; margin: 0 15px; text-decoration: none;">Tech Stack</a>
+                <a href="#projects" style="color: #B0BEC5; margin: 0 15px; text-decoration: none;">Projects</a>
+                <a href="#contact" style="color: #B0BEC5; margin: 0 15px; text-decoration: none;">Contact</a>
             </nav>
         </div>
     </header>
 
-    <section id="hero" class="pt-32 pb-20 text-center container mx-auto">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-5xl font-extrabold mb-4 text-white">
-                أنا <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(to right, var(--accent-color), #FFC107);">محمد علي سميح</span>
+    <section id="hero" class="pt-32 pb-20 text-center container" style="min-height: 80vh;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 3em; font-weight: 800; margin-bottom: 10px; color: white;">
+                Mohamed Ali Samih
             </h2>
-            <h3 class="text-3xl font-light mb-6 text-gray-400">
+            <h3 style="font-size: 1.8em; font-weight: 400; margin-bottom: 20px; color: var(--accent-color);">
                 Full Stack Software Engineer | PHP/Laravel Expert
             </h3>
-            <p class="text-xl mb-10 max-w-2xl mx-auto text-gray-300">
-                أقوم بتحويل المتطلبات المعقدة إلى حلول برمجية مستقرة وقابلة للتوسع (Scalable) ومُحسَّنة الأداء.
+            <p style="font-size: 1.2em; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; color: var(--text-secondary);">
+                Transforming complex business requirements into **scalable, high-performance web solutions** using robust PHP/Laravel backends and modern React/Vite interfaces.
             </p>
 
-            <a href="[رابط ملف CV الخاص بك]" class="btn-primary inline-flex items-center text-lg shadow-lg">
-                <i class="fas fa-download me-2"></i> تحميل السيرة الذاتية (CV)
+            <a href="[YOUR_RESUME_PDF_LINK]" class="btn-primary" style="font-size: 1.1em; margin-bottom: 20px;">
+                <i class="fas fa-download" style="margin-right: 10px;"></i> Download Technical Resume
             </a>
             
-            <div class="mt-8 space-x-6">
-                <a href="[رابط LinkedIn]" target="_blank" class="text-gray-400 hover:text-white text-3xl transition-colors">
-                    <i class="fab fa-linkedin"></i>
+            <div style="margin-top: 25px; display: flex; justify-content: center; gap: 30px;">
+                <a href="[YOUR_LINKEDIN_PROFILE]" target="_blank" style="color: var(--text-secondary); font-size: 2em; transition: color 0.3s;">
+                    <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="[رابط GitHub]" target="_blank" class="text-gray-400 hover:text-white text-3xl transition-colors">
+                <a href="[YOUR_GITHUB_PROFILE]" target="_blank" style="color: var(--text-secondary); font-size: 2em; transition: color 0.3s;">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="tech-stack" class="py-20 container mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-12 text-white">
-            المكدس التقني (My Technology Arsenal)
+    <section id="tech-stack" class="py-20 container">
+        <h2 style="font-size: 2.5em; font-weight: 700; text-align: center; margin-bottom: 50px;">
+            My Technology Arsenal
         </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="section-card text-center">Backend: Laravel/PHP</div>
-            <div class="section-card text-center">Frontend: React.js</div>
-            <div class="section-card text-center">Database: MySQL</div>
-            <div class="section-card text-center">DevOps: Git/Docker</div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+            
+            <div class="section-card">
+                <h3 style="color: var(--accent-color); font-size: 1.5em; margin-bottom: 15px;">Backend & Logic</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">Focus on robust, clean, and well-tested code.</p>
+                <div style="margin-top: 15px;">
+                    <span class="tag" style="background-color: #E74C3C;">PHP</span>
+                    <span class="tag" style="background-color: #F39C12;">Laravel (MVC, Eloquent)</span>
+                    <span class="tag">RESTful APIs</span>
+                    <span class="tag">OOP Principles</span>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3 style="color: var(--accent-color); font-size: 1.5em; margin-bottom: 15px;">Frontend & UI</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">Building modern, responsive, and performance-optimized interfaces.</p>
+                <div style="margin-top: 15px;">
+                    <span class="tag" style="background-color: #3498DB;">React.js</span>
+                    <span class="tag" style="background-color: #2ECC71;">JavaScript (ES6+)</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">Vite</span>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3 style="color: var(--accent-color); font-size: 1.5em; margin-bottom: 15px;">Database & DevOps</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">Designing efficient schemas and managing deployments.</p>
+                <div style="margin-top: 15px;">
+                    <span class="tag">MySQL</span>
+                    <span class="tag">SQL Optimization</span>
+                    <span class="tag">Git & GitHub</span>
+                    <span class="tag">Docker (Basic)</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="py-20 container mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-12 text-white">
-            7 مشاريع تحدد خبرتي (Deployed Projects)
+    <section id="projects" class="py-20 container">
+        <h2 style="font-size: 2.5em; font-weight: 700; text-align: center; margin-bottom: 50px;">
+            7 Deployed Projects & Case Studies
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="section-card overflow-hidden">
-                <h3 class="text-2xl font-semibold mb-3 text-white">المشروع #1</h3>
-                <p class="text-gray-400 mb-4">وصف موجز: (مثلاً) نظام إدارة مخزون شامل ومُحسن.</p>
-                <div class="flex space-x-4">
-                    <a href="[رابط الموقع الحي]" target="_blank" class="text-sm text-white hover:text-yellow-400 font-medium">
-                        <i class="fas fa-external-link-alt me-1"></i> Demo
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            
+            <div class="section-card">
+                <div style="height: 200px; background-color: #4A4A4A; border-radius: 8px; margin-bottom: 15px;">
+                    <img src="[PROJECT_IMAGE_URL]" alt="Project Mockup" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"/>
+                </div>
+                
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 5px;">Inventory Management System</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">Full-scale system built for stock management, optimized for concurrent transactions and real-time reporting.</p>
+                
+                <div style="margin-bottom: 15px;">
+                    <span class="tag">Laravel 10</span>
+                    <span class="tag">React</span>
+                    <span class="tag">MySQL</span>
+                </div>
+                
+                <div style="display: flex; gap: 15px;">
+                    <a href="[LIVE_DEMO_LINK]" target="_blank" class="btn-secondary">
+                        <i class="fas fa-external-link-alt" style="margin-right: 5px;"></i> Live Demo
                     </a>
-                    <a href="[رابط GitHub]" target="_blank" class="text-sm text-white hover:text-yellow-400 font-medium">
-                        <i class="fab fa-github me-1"></i> Source Code
+                    <a href="[GITHUB_SOURCE_LINK]" target="_blank" class="btn-secondary">
+                        <i class="fab fa-github" style="margin-right: 5px;"></i> Source Code
                     </a>
                 </div>
             </div>
+            <div class="section-card">
+                 <div style="height: 200px; background-color: #4A4A4A; border-radius: 8px; margin-bottom: 15px;">
+                    <img src="[PROJECT_IMAGE_URL]" alt="Project Mockup" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"/>
+                </div>
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 5px;">HR & Payroll System</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">Robust application for employee data, attendance tracking, and automated salary calculation logic.</p>
+                 <div style="margin-bottom: 15px;">
+                    <span class="tag">PHP (Native)</span>
+                    <span class="tag">Bootstrap</span>
+                    <span class="tag">PostgreSQL</span>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="[LIVE_DEMO_LINK]" target="_blank" class="btn-secondary">
+                        <i class="fas fa-external-link-alt" style="margin-right: 5px;"></i> Live Demo
+                    </a>
+                    <a href="[GITHUB_SOURCE_LINK]" target="_blank" class="btn-secondary">
+                        <i class="fab fa-github" style="margin-right: 5px;"></i> Source Code
+                    </a>
+                </div>
             </div>
+            
+            <div class="section-card">
+                 <div style="height: 200px; background-color: #4A4A4A; border-radius: 8px; margin-bottom: 15px;"></div>
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 5px;">E-Learning Platform (LMS)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">Content management and user role separation for admin, instructor, and student access.</p>
+                 <div style="margin-bottom: 15px;">
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Blade Templates</span>
+                    <span class="tag">MySQL</span>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="[LIVE_DEMO_LINK]" target="_blank" class="btn-secondary"> Live Demo</a>
+                    <a href="[GITHUB_SOURCE_LINK]" target="_blank" class="btn-secondary"> Source Code</a>
+                </div>
+            </div>
+            
+            <div class="section-card">
+                 <div style="height: 200px; background-color: #4A4A4A; border-radius: 8px; margin-bottom: 15px;"></div>
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 5px;">Project #4 (Placeholder)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">Description of the technical challenge and solution.</p>
+                 <div style="margin-bottom: 15px;">
+                    <span class="tag">Tech A</span>
+                    <span class="tag">Tech B</span>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="[LIVE_DEMO_LINK]" target="_blank" class="btn-secondary"> Live Demo</a>
+                    <a href="[GITHUB_SOURCE_LINK]" target="_blank" class="btn-secondary"> Source Code</a>
+                </div>
+            </div>
+
+            <div class="section-card">
+                 <div style="height: 200px; background-color: #4A4A4A; border-radius: 8px; margin-bottom: 15px;"></div>
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 5px;">Project #5 (Placeholder)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">Description of the technical challenge and solution.</p>
+                 <div style="margin-bottom: 15px;">
+                    <span class="tag">Tech A</span>
+                    <span class="tag">Tech B</span>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="[LIVE_DEMO_LINK]" target="_blank" class="btn-secondary"> Live Demo</a>
+                    <a href="[GITHUB_SOURCE_LINK]" target="_blank" class="btn-secondary"> Source Code</a>
+                </div>
+            </div>
+
+            <div class="section-card">
+                 <div style="height: 200px; background-color: #4A4A4A; border-radius: 8px; margin-bottom: 15px;"></div>
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 5px;">Project #6 (Placeholder)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">Description of the technical challenge and solution.</p>
+                 <div style="margin-bottom: 15px;">
+                    <span class="tag">Tech A</span>
+                    <span class="tag">Tech B</span>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="[LIVE_DEMO_LINK]" target="_blank" class="btn-secondary"> Live Demo</a>
+                    <a href="[GITHUB_SOURCE_LINK]" target="_blank" class="btn-secondary"> Source Code</a>
+                </div>
+            </div>
+
+             <div class="section-card">
+                 <div style="height: 200px; background-color: #4A4A4A; border-radius: 8px; margin-bottom: 15px;"></div>
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 5px;">Project #7 (Placeholder)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">Description of the technical challenge and solution.</p>
+                 <div style="margin-bottom: 15px;">
+                    <span class="tag">Tech A</span>
+                    <span class="tag">Tech B</span>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="[LIVE_DEMO_LINK]" target="_blank" class="btn-secondary"> Live Demo</a>
+                    <a href="[GITHUB_SOURCE_LINK]" target="_blank" class="btn-secondary"> Source Code</a>
+                </div>
+            </div>
+            
+        </div>
     </section>
 
-    <footer id="contact" class="py-10 text-center border-t border-gray-700 mt-10">
-        <p class="text-gray-400">تواصل معي لبناء حلول برمجية قوية.</p>
-        </footer>
+    <footer id="contact" class="py-10 text-center" style="border-top: 1px solid #333; margin-top: 50px;">
+        <div class="container">
+            <p style="color: var(--text-secondary); font-size: 1.2em; margin-bottom: 20px;">
+                Ready to build something robust? Let's connect.
+            </p>
+            <p style="color: #666; font-size: 0.9em;">
+                © 2025 Mohamed Ali Samih. Code is the Architecture.
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
